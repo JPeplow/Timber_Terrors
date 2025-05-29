@@ -1,0 +1,1 @@
+global._xp_amount += 1;

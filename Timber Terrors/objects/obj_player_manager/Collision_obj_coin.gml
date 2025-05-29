@@ -1,0 +1,1 @@
+global._collected_coins += 1;

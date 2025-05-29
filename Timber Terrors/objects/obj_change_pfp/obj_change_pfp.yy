@@ -1,0 +1,43 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_change_pfp",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_change_pfp",
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_button_parents","path":"objects/obj_button_parents/obj_button_parents.yy",},"propertyId":{"name":"button_text","path":"objects/obj_button_parents/obj_button_parents.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Change Icon",},
+  ],
+  "parent":{
+    "name":"Profile",
+    "path":"folders/Objects/Menu/Profile.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_button_parents",
+    "path":"objects/obj_button_parents/obj_button_parents.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_profile_buttons",
+    "path":"sprites/spr_profile_buttons/spr_profile_buttons.yy",
+  },
+  "spriteMaskId":null,
+  "visible":true,
+}

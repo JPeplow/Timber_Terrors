@@ -1,0 +1,1 @@
+_bkg_music = audio_play_sound(snd_test, 10, true, global.volume_level);
