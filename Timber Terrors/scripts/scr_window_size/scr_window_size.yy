@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_window_size",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_window_size",
+  "parent":{
+    "name":"Settings",
+    "path":"folders/Scripts/Settings.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
