@@ -1,0 +1,9 @@
+resources code (bone whip)
+spawning
+fix/tweak and polish quests
+implement skills (check phone notes)
+
+
+EXP and levels
+afk rewards (once resources are figured out)
+add stun to bear trap

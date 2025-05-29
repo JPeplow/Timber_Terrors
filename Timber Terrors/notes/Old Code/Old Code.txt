@@ -1,0 +1,539 @@
+//var _spr_empty_hearts_width = sprite_get_width(spr_empty_hearts);
+//var _count0 = 0;
+//for(var _current0 = 5; _current0 > 0; --_current0) {
+//	draw_sprite(spr_empty_hearts, 0, 30 + _count0, 30);
+//	_count0 += _spr_empty_hearts_width;
+//}
+
+//var _spr_hearts_width = sprite_get_width(spr_hud_hearts);
+//var _count1 = 0;
+//for(var _current1 = obj_player_character.hearts; _current1 > 0; --_current1) {
+//	draw_sprite(spr_hud_hearts, 0, 30 + _count1, 30);
+//	_count1 += _spr_hearts_width;
+//}
+
+###Old Health Display###
+
+### automatic attack
+//if (_enemy_close) // Check is enemy is close
+//{
+//	if (alarm[1] < 0)
+//	{
+//		alarm_set(1, room_speed + 5); // Attack cooldown 5
+//		instance_create_layer(x + 0, y + 0, "Instances", obj_axe_attack); // Create attack
+//	}
+//}
+
+
+
+/// Spawn enemy every 5 seconds
+if (global.seconds % 5 == 0)
+{
+	
+	alarm_set(0, 2);
+	_enemies += 1;
+	
+}
+///
+
+// Must fix below code, not executing at given time
+
+if global.minuets = 5
+{
+	if _i = 0
+	{
+		_i += 1;
+		scr_spawn_boss();
+	}
+}
+
+/// /// Skill Damage /// ///
+
+function _upgrade_skill_damage()
+{
+	
+	var _current_level = "Level" + string(argument0 + 1 );
+	
+	/// Damage levels
+	_skill_damage = ds_map_create();
+	ds_map_add( _skill_damage, "Level1", 1);
+	ds_map_add( _skill_damage, "Level2", 2);
+	ds_map_add( _skill_damage, "Level3", 3);
+	ds_map_add( _skill_damage, "Level4", 4);
+	ds_map_add( _skill_damage, "Level5", 6);
+	ds_map_add( _skill_damage, "Level6", 8);
+	ds_map_add( _skill_damage, "Level7", 10);
+	ds_map_add( _skill_damage, "Level8", 12);
+	ds_map_add( _skill_damage, "Level9", 14);
+	ds_map_add( _skill_damage, "Level10", 17);
+	///
+	
+	/// Damage costs
+	_skill_damage_costs = ds_map_create();
+	ds_map_add( _skill_damage_costs, "Level1", 5);
+	ds_map_add( _skill_damage_costs, "Level2", 7);
+	ds_map_add( _skill_damage_costs, "Level3", 10);
+	ds_map_add( _skill_damage_costs, "Level4", 14);
+	ds_map_add( _skill_damage_costs, "Level5", 24);
+	ds_map_add( _skill_damage_costs, "Level6", 35);
+	ds_map_add( _skill_damage_costs, "Level7", 47);
+	ds_map_add( _skill_damage_costs, "Level8", 60);
+	ds_map_add( _skill_damage_costs, "Level9", 74);
+	ds_map_add( _skill_damage_costs, "Level10", 104);
+	///
+	
+	// Return relevant data, level and cost
+	global._skill_damage_new = [ds_map_find_value( _skill_damage, _current_level), ds_map_find_value( _skill_damage_costs, _current_level)];
+	
+	ds_map_destroy( _skill_damage); // Destroy map
+	ds_map_destroy( _skill_damage_costs); // Destroy map
+	
+}
+
+/// /// Skill Health /// ///
+
+function _upgrade_skill_health()
+{
+	
+	var _current_level = "Level" + string(argument0 + 1 );
+	
+	/// Health levels
+	_skill_health = ds_map_create();
+	ds_map_add( _skill_health, "Level1", 5);
+	ds_map_add( _skill_health, "Level2", 7);
+	ds_map_add( _skill_health, "Level3", 8);
+	ds_map_add( _skill_health, "Level4", 9);
+	ds_map_add( _skill_health, "Level5", 10);
+	ds_map_add( _skill_health, "Level6", 11);
+	ds_map_add( _skill_health, "Level7", 12);
+	ds_map_add( _skill_health, "Level8", 13);
+	ds_map_add( _skill_health, "Level9", 14);
+	ds_map_add( _skill_health, "Level10", 15);
+	///
+	
+	/// Health costs
+	_skill_health_costs = ds_map_create();
+	ds_map_add( _skill_health_costs, "Level1", 100);
+	ds_map_add( _skill_health_costs, "Level2", 140);
+	ds_map_add( _skill_health_costs, "Level3", 180);
+	ds_map_add( _skill_health_costs, "Level4", 220);
+	ds_map_add( _skill_health_costs, "Level5", 260);
+	ds_map_add( _skill_health_costs, "Level6", 300);
+	ds_map_add( _skill_health_costs, "Level7", 340);
+	ds_map_add( _skill_health_costs, "Level8", 380);
+	ds_map_add( _skill_health_costs, "Level9", 420);
+	ds_map_add( _skill_health_costs, "Level10", 460);
+	///
+	
+	// Return relevant data, level and cost
+	global._skill_health_new = [ds_map_find_value( _skill_health, _current_level), ds_map_find_value( _skill_health_costs, _current_level)];
+	
+	ds_map_destroy( _skill_health); // Destroy map
+	ds_map_destroy( _skill_health_costs); // Destroy map
+	
+}
+
+	//global._skill_damage_new = [];
+		
+	//_upgrade_skill_damage(real(global.damage_level)); // Upgrade skill
+		
+	//global.damage_level = real( global.damage_level + 1); // Up damage level
+	//global.player_damage = real( global._skill_damage_new[0]); // Up player damage
+	//global.damage_cost = real( global._skill_damage_new[1]); // Up damage cost
+	
+	
+		
+	
+	
+	//global._skill_health_new = [];
+	
+	//_upgrade_skill_health(real(global.health_level)); // Upgrade skill
+	
+	//global.health_level = real( global.health_level + 1); // Up health level
+	//global.player_max_hearts = real( global._skill_health_new[0]); // Up player health
+	//global.health_cost = real( global._skill_health_new[1]); // Up haelth cost
+	
+			//draw_set_alpha(0.5); // Set opacity
+		//draw_rectangle_colour(0, 0, room_width, room_height, c_black, c_black, c_black, c_black, false); // Background
+		//draw_set_alpha(1); // Set opacity
+		
+				//draw_sprite(spr_button, 0, 200, 400); // Draw sprite
+		//draw_text_transformed(200, 402, "Quit to title", 1, 1, 0); // Draw text
+		
+				//draw_sprite(spr_button, 0, 200, 300); // Draw sprite
+		//draw_text_transformed(200, 302, "Resume", 1, 1, 0); // Draw text
+		
+				//draw_text_transformed(200, 200, "PAUSED", 1.5, 1.5, 0); // Draw text
+				
+				//if global.display_upgrades == true
+//{
+	
+//	draw_set_font(fnt_font1_big);
+//	draw_text_transformed(206, 495, "Upgrades", 1, 1, 0)
+	
+//	instance_create_layer(21, 526, "Instances", obj_btn_skill_damage);
+//	instance_create_layer(21, 591, "Instances", obj_btn_skill_health);
+
+//}
+
+		//if global.health_level = 0
+		//{
+		//	if global.personal_best[0] >= 5
+		//	{
+		//		global.upgrade_skill_health = !global.upgrade_skill_health;
+		//	}
+		//}
+		//else
+		//{
+		//	if global.health_level = 10 // If health equal to 10
+		//	{
+		//		exit; // Don't upgrade
+		//	}
+		//	else
+		//	{
+		//		if obj_player_manager.wood >= global.skills_health[real(global.health_level), 2] // Check player currency
+		//		{
+			
+		//			global.upgrade_skill_health = !global.upgrade_skill_health; // Upgrade skill
+		//		}
+		//	}
+		//}
+		
+		//if global.health_level = 10
+//{
+//	// At max level display max
+//	draw_text_transformed(x + 50, y + 26, "MAX", 0.75, 1, 0);
+//	draw_text_transformed(x + 112, y +26, "Max", 0.75, 1, 0);
+//}
+//else
+//{
+//	// Display current level of skill and cost to upgrade
+//	draw_text_transformed(x + 50, y + 26, string(global.health_level), 1, 1, 0);
+//	draw_text_transformed(x + 112, y + 26, string(global.skills_health[real(global.health_level), 2]), 1, 1, 0);
+//}
+
+
+
+
+
+
+
+//if global.damage_level = 10
+//{
+//	// At max level display max
+//	draw_text_transformed(x + 50, y + 26, "MAX", 0.75, 1, 0);
+//	draw_text_transformed(x + 112, y +26, "Max", 0.75, 1, 0);
+//}
+//else
+//{
+//	// Dislpay current level of skill and cost to upgrade
+//	draw_text_transformed(x + 50, y + 26, string(global.damage_level), 1, 1, 0);
+//	draw_text_transformed(x + 112, y + 26, string(global.skills_damage[real(global.damage_level), 2]), 1, 1, 0);
+//}
+
+
+
+global.display_upgrades = false;
+global.display_settings = false;
+global.display_stats = false;
+global.display_quests = false;
+
+_page_text = "";
+
+
+// Upgrades
+draw_set_font(fnt_font1_big);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text_transformed(206, 495, string(_page_text), 1, 1, 0);
+
+
+
+if global.display_upgrades = true
+{
+	_page_text = "Upgrades";
+}
+
+if global.display_settings = true
+{
+	_page_text = "Settings";
+	draw_set_font(fnt_font1);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_bottom);
+	draw_text_transformed
+	(4, 758, 
+		"Game Version 0.0.1.3 \nDeveloped by RogueHorizonsStudios"
+	,0.75, 0.75, 0);
+}
+
+if global.display_stats = true
+{
+	_page_text = "Stats";
+	draw_set_font(fnt_font1);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_bottom);
+	draw_text_transformed
+	(4, 758, 
+		"Damage: " + string(global.player_damage) + "\n" +
+		"Max Health: " + string(global.player_max_hearts) + "\n" +
+		"Personal Best: " + string(global.personal_best[0]) + ":" + string(global.personal_best[1]) + "\n" +
+		"Total Enemies Defeated: " + string(global.total_enemies_defeated) + "\n" 
+		
+	,1, 1, 0);
+	
+}
+
+if global.display_quests = true
+{
+	_page_text = "Quests";
+	draw_set_font(fnt_font1);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+}
+
+//
+
+///// Down
+//if _move_y >= 0.5
+//{
+//	sprite_index = spr_player_character_down;
+//	image_index = 0;
+//}
+/////
+
+///// Up
+//if _move_y <= -0.5
+//{
+//	sprite_index = spr_player_character_up;
+//	image_index = 0;
+//}
+/////
+
+//var quest_array = 
+//[
+////	[
+////		"NAME",
+////		active,
+////		"Description",
+////		[rewards]
+////	],
+//	[
+//		"COLLECT [E]",
+//		0,
+//		["Collect 25 coins", "COMPLETED"],
+//		[25]
+//	],
+//	[
+//		"SURVIVE [E]",
+//		-1,
+//		["Survive 1 minuet"],
+//		[5]
+//	],
+//	[
+//		"KILL ENEMIES [E]",
+//		-1,
+//		["Kill 25 enemies"],
+//		[10]
+//	],
+//	[
+//		"COLLECT [M]",
+//		-1,
+//		["Collect 50 wood"],
+//		[20]
+//	],
+//	[
+//		"KILL ENEMIES [M]",
+//		-1,
+//		["Kill 150 enemies"],
+//		[50]
+//	],
+//	[
+//		"SURVIVE [M]",
+//		-1,
+//		["Survive 5 minuets"],
+//		[20, 50]
+//	],
+//	[
+//		"COLLECT [H]",
+//		-1,
+//		["Collect 300 coins", "Collect 100 wood"],
+//		[150, 50]
+//	],
+//	[
+//		"KILL ENEMIES [H]",
+//		-1,
+//		["Kill 500 enemies"],
+//		[200]
+//	],
+//	[
+//		"SURVIVE [H]",
+//		-1,
+//		["Survive 15 minuets"],
+//		[150, 75]
+//	]
+//]
+
+===QUESTS===
+
+enum QUEST
+{
+	COLLECT_E,
+	SURVIVE_E,
+	KILL_E,
+	COLLECT_M,
+	KILL_M,
+	SURVIVE_M,
+	COLLECT_H,
+	KILL_H,
+	SURVIVE_H
+}
+
+var _common_quests =
+[
+	[
+		"COLLECT",
+		-1,
+		["Collect 25 coins", "COMPLETED"],
+	],
+	[
+		"KILL",
+		-1,
+		["Kill 15 enemies", "COMPLETED"],
+	]
+]
+
+var _uncommon_quests =
+[
+	[
+		"COLLECT",
+		-1,
+		["Collect 40 coins", "COMPLETED"],
+	],
+	[
+		"KILL",
+		-1,
+		["Kill 25 enemies", "COMPLETED"],
+	]
+]
+
+
+//var _quest_array = [];
+//_quest_array[0] = _common_quests;
+//_quest_array[1] = _uncommon_quests;
+
+ds_quests = create_ds_grid_from_array(_quest_array);
+ds_quest_number = ds_grid_height(ds_quests);
+
+global.quests_pointer = ds_quests;
+global.qn_pointer = ds_quest_number;
+
+
+var _grid = ds_quests;
+
+var _i = 0; repeat(ds_quest_number)
+{
+	
+	switch(_i)
+	{
+		#region COLLECT EASY
+		case QUEST.COLLECT_E:
+		
+			switch(_grid[# 1, _i])
+			{
+				case -1: break;
+				case 0:
+					with (obj_game_manager)
+					{
+						if global._collected_coins >= 5
+						{
+							_grid[# 1, _i] += 1;
+						}
+					}
+				break;
+				case 1:
+					with (obj_btn_quests)
+					{
+						if (mouse_check_button_pressed(mb_left)) // Check is lmb is pressed
+						{
+							// Check is lmb press is within button location
+							if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), bbox_left, bbox_top, bbox_right, bbox_bottom))
+							{
+								show_debug_message("HI");
+							}
+						}
+				
+					}
+			}
+		
+		break;
+		#endregion
+		#region KILL EASY
+		case QUEST.KILL_E:
+		
+		break;
+		#endregion
+		#region SURVIVE EASY
+		case QUEST.SURVIVE_E:
+		
+		break;
+		#endregion
+		#region COLLECT MEDIUM
+		case QUEST.COLLECT_M:
+		
+		break;
+		#endregion
+		#region KILL MEDIUM
+		case QUEST.KILL_M:
+		
+		break;
+		#endregion
+		#region SURVIVE MEDIUM
+		case QUEST.SURVIVE_M:
+		
+		break;
+		#endregion
+		#region	COLLECT HARD
+		case QUEST.COLLECT_H:
+		
+		break;
+		#endregion
+		#region	KILL HARD
+		case QUEST.KILL_H:
+		
+		break;
+		#endregion
+		#region	SURVIVE HARD
+		case QUEST.SURVIVE_H:
+		
+		break;
+		#endregion
+	}
+	
+	_i++;
+	
+}
+
+
+if object_exists(obj_btn_quests)
+{
+	with (obj_btn_quests)
+	{
+		var _str = "";
+
+		var _i = 0; repeat(global.qn_pointer)
+		{
+			var _stage = global.quests_pointer[# 1, _i];
+			if (_stage != -1)
+			{
+				var _array = global.quests_pointer[# 2, _i];
+				_str += global.quests_pointer[# 0, _i] + "\n" + _array[_stage];				
+			}			
+			_i++;	
+		}
+
+		draw_set_font(fnt_font1);
+		draw_text_transformed(x + 128, y + 50, _str, 1, 1, 0);
+	}
+}
+
+ds_grid_destroy(ds_quests);

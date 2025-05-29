@@ -1,0 +1,13 @@
+Objects: Buttons Folder
+Objects: Game: Character Folder
+Objects: Game: Enemies Folder
+Objects: Game: Resources Folder
+Objects: Game Folder
+Objects: Joystick Folder
+Objects: Menu: Screen Folder
+Objects: Menu: Upgardes
+Scripts: Upgrades Folder
+Scripts: Game Folder
+Scripts: Save Load Folder
+
+All Commenting Completed

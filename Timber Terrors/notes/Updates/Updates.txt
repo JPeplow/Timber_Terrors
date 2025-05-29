@@ -1,0 +1,57 @@
+/// ///UPDATE V0.1.2/// ///
+
+Health display rework
+New skill: Health
+Reworked Art
+
+/// ///Update V0.1.3/// ///
+
+//Gameplay//
+
+Updated enemy pathing
+Added enemy collision
+
+Added stats screen
+
+Added Quests screen
+Added 10 new quests
+
+Added Skill Health requirement
+Added Skill Damage requirment
+
+//Visuals//
+
+Added "Defeated" screen
+Updated "Pause" screen
+
+Moved game details to Settings screen
+
+//Fixes//
+
+Skill upgrades now take correct amount of currency
+Fixed spawning for true random
+Fixed weapon cooldown delay
+
+/// ///Update V0.1.4/// ///
+
+//Gameplay//
+
+Moved Quests and Skills to their own screens
+
+Added a profile:
+	Settings
+	Stats
+	Change Icon
+
+//Visuals//
+
+Updated menu screen
+Updated "Paused" screen
+
+//Sounds//
+
+Added menu music (Adjust volume in Profile > Settings)
+
+//Fixes//
+
+Fixed pause button, now responds correctly to user interation
