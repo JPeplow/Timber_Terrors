@@ -1,0 +1,1 @@
+ability_cooldown = !ability_cooldown;
